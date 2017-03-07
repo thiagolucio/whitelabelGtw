@@ -1,0 +1,28 @@
+{
+  "name": "whitelabel-gateway",
+  "authors": [
+    "thiago.silva"
+  ],
+  "description": "Whitelabel para Gateway",
+  "main": "index.html",
+  "keywords": [
+    "gateway",
+    "whitelabel"
+  ],
+  "license": "NEXXERA",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "jquery-validation": "^1.16.0",
+    "jquery-validation-unobtrusive": "^3.2.6",
+    "fast-live-reload": "^2.7.4"
+  }
+}

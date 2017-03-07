@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>White Label Gateway</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                <img src="imgs/logo_nix.svg" width="250" height="250" class="centered-horizontal" />
+            </div>
+            <div class="col-md-9 col-xs-12 topSlogan">
+                <h3 class="header-title"><b>SELECIONE A FORMA DE PAGAMENTO</b></h3>
+            </div>
+        </div>
+        <!-- COLUNA DA ESQUERDA -->
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                <div class="list-group">
+                    <a class="list-group-item">
+                        <h4><b>Nº do pedido: 124741</b></h4>
+                    </a>
+                    <a class="list-group-item"><i class="glyphicon glyphicon-ok"></i> Computador Samsung 15 - R$ 15,00</a>
+                    <a class="list-group-item"><i class="glyphicon glyphicon-ok"></i> Mesa para computador Tipo Escrivaninha Modelo 025458 - Motorola - R$ 30,44</a>
+                    <a class="list-group-item"><i class="glyphicon glyphicon-ok"></i> Celular Samsung Galaxy S7 - R$ 1999,99</a>
+                </div>
+            </div>
+            <!-- COLUNA DA DIREITA COM TABS -->
+            <div class="col-md-9 col-xs-12">
+                <div class="row">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="col-md-3 col-xs-3 active">
+                            <a id="credit-card-tab" href="#cartao-credito" aria-controls="cartao-credito" role="tab" data-toggle="tab">
+                                <h3><i class="glyphicon glyphicon-credit-card  hidden-md hidden-lg"></i></h3>
+                                <div class="hidden-xs hidden-sm">Cartão de Crédito</div>
+                            </a>
+                        </li>
+                        <li role="presentation" class="col-md-3 col-xs-3">
+                            <a id="boleto-tab" href="#boleto-bancario" aria-controls="boleto-bancario" role="tab" data-toggle="tab">
+                                <h3><i class="glyphicon glyphicon-barcode hidden-md hidden-lg"></i></h3>
+                                <div class="hidden-xs hidden-sm">Boleto Bancário</div>
+                            </a>
+                        </li>
+                        <li role="presentation" class="col-md-3 col-xs-3">
+                            <a id="debit-card-tab" href="#cartao-debito" aria-controls="cartao-debito" role="tab" data-toggle="tab">
+                                <h3><i class="glyphicon glyphicon-usd hidden-md hidden-lg"></i></h3>
+                                <div class="hidden-xs hidden-sm">Cartão de Débito</div>
+                            </a>
+                        </li>
+                        <li role="presentation" class="col-md-3 col-xs-3">
+                            <a id="wallet-tab" href="#carteira-digital" aria-controls="carteira-digital" role="tab" data-toggle="tab">
+                                <img height="50" src="imgs/logo_nix.svg" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- INICIO CONTEUDO TABS -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in collapse" id="cartao-credito">
+                        <form method="post" class="form-credit" role="form" action="/Checkout/CreditCard">
+                            <div class="col-md-6 col-xs-12">
+                                <input id="OrderId" name="OrderId" type="hidden" value="7e5503c9-22b3-4fd3-873b-71e64e12a6d3" />
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="usr">Número do cartão</label>
+                                        <input type="text" class="form-control input-lg" id="numero-cartao" data-val="true" data-val-creditcard="The N&#xFA;mero do Cart&#xE3;o field is not a valid credit card number." data-val-required="The N&#xFA;mero do Cart&#xE3;o field is required." name="Number"
+                                            value="">
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="Number" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="usr">Nome impresso no cartão</label>
+                                        <input type="text" class="form-control input-lg" id="nome-cartao" maxlength="60" data-val="true" data-val-length="The field Nome Impresso no Cart&#xE3;o must be a string with a maximum length of 25." data-val-length-max="25" data-val-required="The Nome Impresso no Cart&#xE3;o field is required."
+                                            name="HolderName" value="">
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="HolderName" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Validade</label>
+                                        <input type="text" class="form-control input-lg" id="validade-cartao" data-val="true" data-val-minlength="Data de Validade Inv&#xE1;lida" data-val-minlength-min="9" data-val-required="The Data de Validade field is required." name="ExpirationDate" value="">
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="ExpirationDate" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cod-secure">Código de segurança (CVV)</label>
+                                        <input type="text" class="form-control input-lg" id="cod-secure" data-val="true" data-val-maxlength="CVV Inv&#xE1;lido" data-val-maxlength-max="4" data-val-minlength="CVV Inv&#xE1;lido" data-val-minlength-min="3" data-val-required="The C&#xF3;digo de Seguran&#xE7;a (CVV) field is required."
+                                            name="Cvv" value="">
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="Cvv" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="parcelas">Parcelas</label>
+                                        <select class="form-control input-lg" id="parcelas" data-val="true" data-val-required="The SelectedNumberInstallment field is required." name="SelectedNumberInstallment">
+                                                <option value="1|R$ 100,00|False">1 x R$100,00 s/juros</option>
+                                                <option value="2|R$ 102,30|True">2 x R$51,15 c/juros 2% a.m.</option>
+                                                <option value="3|R$ 100,00|True">3 x R$33,33 c/juros 2% a.m.</option>
+                                                <option value="4|R$ 100,00|False">4 x </option>
+                                            </select>
+                                    </div>
+                                    <h5 class="alert alert-danger"><b>Valor total: <span id="total-amount"></span></b></h5>
+                                    <input type="submit" value="CONCLUIR PAGAMENTO" class="btn btn-primary btn-lg">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="col-md-6 col-xs-12">
+                            <div class='card-wrapper-credit hidden-xs hidden-sm' data-model="{&quot;orderId&quot;:null,&quot;number&quot;:null,&quot;holderName&quot;:null,&quot;expirationDate&quot;:null,&quot;cvv&quot;:null,&quot;acceptedBrands&quot;:[8,7,2,3,4,5,6],&quot;selectedBrand&quot;:0,&quot;selectedNumberInstallment&quot;:null,&quot;installments&quot;:[{&quot;number&quot;:1,&quot;amount&quot;:100.00,&quot;template&quot;:&quot;{instalment} {amount} s/juros&quot;,&quot;value&quot;:&quot;1|R$ 100,00|False&quot;,&quot;approximateAmount&quot;:&quot;&quot;},{&quot;number&quot;:2,&quot;amount&quot;:102.30,&quot;template&quot;:&quot;{instalment} {ApproximateAmount} c/juros 2% a.m.&quot;,&quot;value&quot;:&quot;2|R$ 102,30|True&quot;,&quot;approximateAmount&quot;:&quot;Valor aproximado&quot;},{&quot;number&quot;:3,&quot;amount&quot;:100.00,&quot;template&quot;:&quot;{instalment} {ApproximateAmount} c/juros 2% a.m.&quot;,&quot;value&quot;:&quot;3|R$ 100,00|True&quot;,&quot;approximateAmount&quot;:&quot;Valor aproximado&quot;},{&quot;number&quot;:4,&quot;amount&quot;:100.00,&quot;template&quot;:null,&quot;value&quot;:&quot;4|R$ 100,00|False&quot;,&quot;approximateAmount&quot;:&quot;&quot;}],&quot;selectedInstallment&quot;:null}"></div>
+                            <div class="cartoes-credito">
+                                <div class="row padding20">
+                                    <label class="radio-inline">
+                                            <input data-val="true" data-val-required="The Bandeira field is required." Id="visa" name="SelectedBrand" type="radio" value="Visa" />
+                                            <img src=imgs/card-brands/visa.svg height="30">
+                                    </label>
+                                    <label class="radio-inline">
+                                            <input Id="mastercard" name="SelectedBrand" type="radio" value="MasterCard" />
+                                            <img src=imgs/card-brands/mastercard.svg height="30">
+                                    </label>
+                                    <label class="radio-inline">
+                                            <input Id="aura" name="SelectedBrand" type="radio" value="Aura" />
+                                            <img src=imgs/card-brands/aura.svg height="30">
+                                    </label>
+                                </div>
+                                <div class="row padding20">
+                                    <label class="radio-inline">
+                                            <input Id="dinersclub" name="SelectedBrand" type="radio" value="DinersClub" />
+                                            <img src=imgs/card-brands/dinersclub.svg height="30">
+                                    </label>
+                                    <label class="radio-inline">
+                                            <input Id="discover" name="SelectedBrand" type="radio" value="Discover" />
+                                            <img src=imgs/card-brands/discover.svg height="30">
+                                    </label>
+                                    <label class="radio-inline">
+                                            <input Id="elo" name="SelectedBrand" type="radio" value="Elo" />
+                                            <img src=imgs/card-brands/elo.svg height="30">
+                                    </label>
+                                </div>
+                                <div class="row padding20">
+                                    <label class="radio-inline">
+                                            <input Id="jcb" name="SelectedBrand" type="radio" value="Jcb" />
+                                            <img src=imgs/card-brands/jcb.svg height="30">
+                                    </label>
+                                </div>
+                            </div>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="SelectedBrand" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <!-- SEGUNDO CONTEUDO - BOLETO BANCARIO -->
+                    <div role="tabpanel" class="tab-pane fade@columnSize" id="boleto-bancario">
+                        <form method="get" class="form-boleto" role="form" action="/Checkout">
+                            <input id="orderId" name="orderId" type="hidden" value="7e5503c9-22b3-4fd3-873b-71e64e12a6d3" />
+                            <div class="col-md-12 textaligncenter">
+                                <img src=imgs/cartao-credito.png>
+                                <h5 class="alert alert-danger"><b>Valor total: <span id="total-amount">R$10.000,00</span></b></h5>
+                                <!-- <span id="boleto-amount">R$10.000,00</span></p> -->
+                            </div>
+                            <div class="row">
+                                <input type="submit" value="GERAR BOLETO" class="btn btn-primary btn-lg centered-horizontal">
+                            </div>
+                        </form>
+                    </div>
+                    <!-- TERCEIRO CONTEUDO - CARTAO DE DEBITO -->
+                    <div role="tabpanel" class="tab-pane fade@columnSize" id="cartao-debito">
+                        <form method="post" class="form-debit" role="form" action="/Checkout/DebitCard">
+                            <div class="p3p col-md-12">
+                                <div class="col-md-6">
+                                    <input id="OrderId" name="OrderId" type="hidden" value="7e5503c9-22b3-4fd3-873b-71e64e12a6d3" />
+                                    <input data-val="true" data-val-number="Este campo precisa ser numérico" data-val-required="Este campo é obrigatório" id="Amount" name="Amount" type="hidden" value="10000,00" />
+                                    <div class="col-md-12">
+                                        <div class="form-group mtop20">
+                                            <label for="usr">Número do cartão</label>
+                                            <input type="text" class="form-control input-lg" id="numero-cartao" data-val="true" data-val-creditcard="Por favor, insira um número de cartão de crédito válido." data-val-required="Um número de cartão de crédito é obrigatório." name="Number" value="">
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="Number" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="usr">Nome impresso no cartão</label>
+                                            <input type="text" class="form-control input-lg" id="nome-cartao" maxlength="60" data-val="true" data-val-length="The field Nome Impresso no Cart&#xE3;o must be a string with a maximum length of 25." data-val-length-max="25" data-val-required="The Nome Impresso no Cart&#xE3;o field is required."
+                                                name="HolderName" value="">
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="HolderName" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="form-group mtop20">
+                                            <label>Validade</label>
+                                            <input type="text" class="form-control input-lg" id="validade-cartao" data-val="true" data-val-minlength="Data de Validade Inv&#xE1;lida" data-val-minlength-min="9" data-val-required="The Data de Validade field is required." name="ExpirationDate" value="">
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="ExpirationDate" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cod-secure">Código de segurança (CVV)</label>
+                                            <input type="text" class="form-control input-lg" id="cod-secure" data-val="true" data-val-maxlength="CVV Inv&#xE1;lido" data-val-maxlength-max="4" data-val-minlength="CVV Inv&#xE1;lido" data-val-minlength-min="3" data-val-required="The C&#xF3;digo de Seguran&#xE7;a (CVV) field is required."
+                                                name="Cvv" value="">
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="Cvv" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <h5 class="alert alert-danger"><b>Valor total: <span id="total-amount">R$10.000,00</span></b></h5>
+                                        <!-- <span id="debit-amount">R$10.000,00</span> -->
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="submit" value="CONCLUIR PAGAMENTO" class="btn btn-primary btn-lg ">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class='card-wrapper-debit hidden-xs' data-model="{&quot;orderId&quot;:null,&quot;number&quot;:null,&quot;holderName&quot;:null,&quot;expirationDate&quot;:null,&quot;cvv&quot;:null,&quot;acceptedBrands&quot;:[1,2],&quot;selectedBrand&quot;:0,&quot;amount&quot;:10000.00}"></div>
+                                    <div class="row padding20">
+                                        <label class="radio-inline">
+                                            <input data-val="true" data-val-required="The Bandeira field is required." Id="mastercarddebito" name="SelectedBrand" type="radio" value="MasterCardDebito" />
+                                            <img src=imgs/card-brands/mastercarddebito.svg height="30">
+                                        </label>
+
+                                        <label class="radio-inline margin0">
+                                            <input Id="visaelectron" name="SelectedBrand" type="radio" value="VisaElectron" />
+                                            <img src=imgs/card-brands/visaelectron.svg height="30">
+                                        </label>
+                                    </div>
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="SelectedBrand" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KcD3W1V9z1Lr9MOHATNnmd9JwmlFMlcFi6vodnJ1gBHNEY0awehipNmJJ91bWo6mf_zOFBXpgmeOu2pg3NW0BuCd4X4VGptzlFDEf52Y5j3unqhJDiVAjON0vEEDM6OFryaC1MnmFpzbSkywOrA384" /></form>
+                    </div>
+                    <!-- QUARTO CONTEUDO - CARTEIRA DIGITAL -->
+                    <div role="tabpanel" class="tab-pane fade@columnSize" id="carteira-digital">
+                        <form method="post" class="form-wallet" role="form" id="walletForm" action="/Checkout/Wallet">
+                            <div class="col-md-12">
+                                <input id="OrderId" name="OrderId" type="hidden" value="7e5503c9-22b3-4fd3-873b-71e64e12a6d3" />
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="cpf">CPF</label>
+                                        <input type="text" class="form-control input-lg" id="cpf" maxlength="14" onKeyPress="MascaraCPF(walletForm.cpf);" data-val="true" data-val-length="CPF Inv&#xE1;lido" data-val-length-max="14" data-val-length-min="14" data-val-required="The CPF field is required."
+                                            name="Cpf" value="">
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="Cpf" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cod-secure">Número do token</label>
+                                        <input type="text" class="form-control input-lg" id="cod-secure" maxlength="6" data-val="true" data-val-minlength="Token Inv&#xE1;lido" data-val-minlength-min="6" data-val-required="The Token field is required." name="Token" value="">
+                                        <span class="text-danger field-validation-valid" data-valmsg-for="Token" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="parcelas">Parcelas</label>
+                                        <select class="form-control input-lg" id="parcelas-wallet" data-val="true" data-val-required="The SelectedNumberInstallment field is required." name="SelectedNumberInstallment"><option value="1|R$ 100,00|False">1 x R$100,00 s/juros</option>
+                                                <option value="2|R$ 102,30|True">2 x R$51,15 c/juros 2% a.m.</option>
+                                                <option value="3|R$ 100,00|True">3 x R$33,33 c/juros 2% a.m.</option>
+                                                <option value="4|R$ 100,00|False">4 x </option>
+                                        </select>
+                                    </div>
+                                    <h5 class="alert alert-danger"><b>Valor total: <span id="total-amount"></span></b></h5>
+                                    <!-- <span id="parcelas-wallet-message" class="alert alert-danger" style="display: none">Valor aproximado</span> -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <input type="submit" value="CONCLUIR PAGAMENTO" class="btn btn-primary btn-lg">
+                            </div>
+                            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KcD3W1V9z1Lr9MOHATNnmd9JwmlFMlcFi6vodnJ1gBHNEY0awehipNmJJ91bWo6mf_zOFBXpgmeOu2pg3NW0BuCd4X4VGptzlFDEf52Y5j3unqhJDiVAjON0vEEDM6OFryaC1MnmFpzbSkywOrA384" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="dist/card.js"></script>
+    <script src="scripts/js.js"></script>
+    <script src="scripts/masks.js"></script>
+</body>
+
+</html>
