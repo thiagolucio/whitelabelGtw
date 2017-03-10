@@ -9,10 +9,7 @@ body {
     font-family: 'Open Sans Regular', sans-serif;
     margin: 0;
 }
-
-
 /*FONTES INCLUDES*/
-
 @font-face {
     font-family: 'Open Sans Light';
     src: url('../fonts/OpenSans-Light-webfont.eot');
@@ -30,8 +27,6 @@ body {
     src: url('../fonts/OpenSans-Bold-webfont.eot');
     src: url('../fonts/OpenSans-Bold-webfont.eot?iefix') format('eot'), url('../fonts/OpenSans-Bold-webfont.woff') format('woff'), url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Bold-webfont.svg#webfont') format('svg');
 }
-
-
 /*NORMATIZACOES*/
 
 .textaligncenter { text-align: center; }
@@ -58,10 +53,7 @@ body {
     align-items: center;
     -webkit-align-items: center;
 }
-
-
 /*centralizacao absoluta*/
-
 .centered-absolute {
     position: relative;
     left: 50%;
@@ -80,10 +72,7 @@ body {
     border: 0px!important;
     border-radius: 0px!important;
 }
-
-
 /*SOBREPOR REGRAS DE ESTILO BOOTSTRAP*/
-
 input, select { border-radius: 0px !important }
 .btn { border-radius: 0px; border: 0px; }
 .btn:hover { transition: all ease .5s; background-color: #1FD9C1; border: 0px; }
@@ -121,14 +110,9 @@ input, select { border-radius: 0px !important }
 }
 
 .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus { transition: all 0.5s ease 0s; }
-
-
 /*especifico da tab com logo na nix*/
-
 .nav-tabs>li>a#wallet-tab { padding: 22px; }
-
 /*corpo conteudos dos tabs*/
-
 .tab-pane {
     width: 100%;
     height: 100% align-items: center;
@@ -136,21 +120,20 @@ input, select { border-radius: 0px !important }
     padding: 16px;
     margin-top: 16px;
 }
-
 .card-wrapper-credit { margin: 25px 0 50px 10px; }
 .radio-inline { margin: 10px;}
 ul.dropdown-menu { min-width: 30px; }
 
 /*botao SELECT BANDEIRAS*/
 #menu-cards, #menu-cards-credit {
-    background: #eee;
+    background: #FFF;
     list-style: none;
     padding: 10px 6px;;
-    min-width: 65px;
+    width: 60px;
     border: none;
     border-radius: 0px;
-    margin-top: 0px;
-    box-shadow: none;
+    margin-top: -1px;
+    box-shadow: 0.2;
 }
 
 .selectorCard input{
@@ -161,7 +144,8 @@ ul.dropdown-menu { min-width: 30px; }
             appearance:none;
 }
 .selectorCard a { text-decoration: none; }
-#button-card, #button-card-credit { margin-top: 25px; padding: 8px 10px; }
+#button-card, #button-card-credit { margin-top: 25px; padding: 7px 8px; background-color: #FFFFFF; border: 1px solid #CCC;}
+#button-card:hover, #button-card-credit {background-color: #EDEDED;}
 
 .efeitoCards{
     cursor:pointer;

@@ -101,7 +101,7 @@
                                             <button type="button" class="btn btn-default dropdown-toggle" id="button-card" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <img src="imgs/card-brands/noCartao.png" height="30" id="cardImg"> <span class="caret"></span>
                                             </button>
-                                            <ul id="menu-cards" class="dropdown-menu dropdown-menu-right">
+                                            <ul id="menu-cards" class="dropdown-menu dropdown-menu-right animated flipInX">
                                                 <div class="selectorCard">
                                                     <li>
                                                         <a href="#">
@@ -204,11 +204,10 @@
                     <!-- TERCEIRO CONTEUDO - CARTAO DE DEBITO -->
                     <div role="tabpanel" class="tab-pane fade@columnSize" id="cartao-debito">
                         <form method="post" class="form-debit" role="form" action="/Checkout/DebitCard">
-                            <div class="p3p col-md-12">
+                            <div class="row">
                                 <input id="OrderId" name="OrderId" type="hidden" value="7e5503c9-22b3-4fd3-873b-71e64e12a6d3" />
                                 <div class="col-md-6">
                                     <input data-val="true" data-val-number="Este campo precisa ser um número." data-val-required="Este campo é obrigatório." id="Amount" name="Amount" type="hidden" value="10000,00" />
-                                    <div class="col-md-12">
                                         <div class="input-group">
                                             <label for="usr">Número do cartão</label>
                                             <input type="text" class="form-control input-lg" id="numero-cartao" data-val="true" data-val-creditcard="Por favor, digite um valor de cartão de crédito válido." data-val-required="O número de cartão de crédito é necessário." name="numberDebit" value="">
@@ -217,7 +216,7 @@
                                                 <button type="button" class="btn btn-default dropdown-toggle" id="button-card" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <img src="imgs/card-brands/noCartao.png" height="30" id="cardImgDebit"><span class="caret"></span>
                                                 </button>
-                                                <ul id="menu-cards" class="dropdown-menu dropdown-menu-right">
+                                                <ul id="menu-cards" class="dropdown-menu dropdown-menu-right animated flipInX">
                                                     <div class="selectorCard">
                                                         <li>
                                                             <a href="#">
@@ -253,15 +252,16 @@
                                             <span class="text-danger field-validation-valid" data-valmsg-for="Cvv" data-valmsg-replace="true"></span>
                                         </div>
                                         <h5 class="alert alert-total"><b>Valor total: <span id="total-amount">R$10.000,00</span></b></h5>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <input type="submit" value="CONCLUIR PAGAMENTO" class="btn btn-primary btn-lg ">
-                                    </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 hidden-xs">
                                     <div class='card-wrapper-debit hidden-xs' data-model="{&quot;orderId&quot;:null,&quot;number&quot;:null,&quot;holderName&quot;:null,&quot;expirationDate&quot;:null,&quot;cvv&quot;:null,&quot;acceptedBrands&quot;:[1,2],&quot;selectedBrand&quot;:0,&quot;amount&quot;:10000.00}"></div>
                                     <span class="text-danger field-validation-valid" data-valmsg-for="SelectedBrand" data-valmsg-replace="true"></span>
                                 </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" value="CONCLUIR PAGAMENTO" class="btn btn-primary btn-lg ">
+                            </div>
                             </div>
                             <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KcD3W1V9z1Lr9MOHATNnmd9JwmlFMlcFi6vodnJ1gBHNEY0awehipNmJJ91bWo6mf_zOFBXpgmeOu2pg3NW0BuCd4X4VGptzlFDEf52Y5j3unqhJDiVAjON0vEEDM6OFryaC1MnmFpzbSkywOrA384" /></form>
                     </div>
